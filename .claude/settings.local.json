@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(npm init:*)",
+      "Bash(npm run web:*)",
+      "Bash(npm install)",
+      "Bash(npx expo install react-native-web react-dom)",
+      "Bash(npx expo install:*)",
+      "Bash(pkill:*)",
+      "Bash(npx expo start:*)",
+      "Bash(open -a Firefox:*)",
+      "Bash(npm install:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
