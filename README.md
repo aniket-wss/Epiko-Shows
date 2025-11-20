@@ -1,99 +1,89 @@
-# Epiko Shows - Ticket Booking MVP
+Epiko Shows - Ticket Booking MVP
 
-A mobile-first ticket booking platform similar to BookMyShow, built with React Native, Node.js, and Supabase.
+Epiko Shows is a mobile-first movie ticket booking application designed for a seamless user experience. It features real-time seat selection, wallet integration, and a loyalty rewards system.
 
-## Project Structure
+🚀 Tech Stack
 
-```
-epiko-shows/
-├── mobile/          # React Native app (iOS & Android)
-├── backend/         # Node.js + Express REST API
-├── database/        # Supabase SQL schema & migrations
-└── README.md
-```
+Frontend: React (Mobile-First Design), Tailwind CSS, Lucide React Icons
 
-## Tech Stack
+Backend: Node.js, Express.js
 
-### Mobile App
-- React Native
-- React Router v7
-- Context API for state management
-- TailwindCSS (NativeWind)
+Database: PostgreSQL (Supabase)
 
-### Backend
-- Node.js + Express
-- Supabase (PostgreSQL)
-- JWT Authentication
-- Passport.js (OAuth)
+Authentication: JWT & Bcrypt (Mocked in prototype, ready for Supabase Auth)
 
-### Database
-- Supabase (PostgreSQL)
-- Real-time subscriptions ready
+✨ Key Features
 
-## Features
+🎬 Discovery: Browse "Now Showing" and "Upcoming" movies with filters.
 
-### User Features
-- Browse movies (Now Showing / Coming Soon)
-- Select theatre, date, and showtime
-- Interactive seat selection
-- Multiple payment modes (Wallet, UPI, Card)
-- Wallet & loyalty points
-- Booking management
+💺 Seat Selection: Interactive seat map with "Available", "Sold", and "Selected" states.
 
-### Admin Features
-- Theatre & screen management
-- Showtime creation
-- Booking overview
-- Offers & promotions
+💳 Payments: Integrated Mock Payment Gateway (Credit Card & Wallet).
 
-## Getting Started
+🎟️ Booking Management: QR Code generation for tickets.
 
-### Prerequisites
-- Node.js 18+
-- React Native development environment
-- Supabase account
+💰 Wallet & Loyalty: Add funds and redeem loyalty points for rewards.
 
-### Setup
+🎫 Coupons: Apply promo codes (e.g., WELCOME50, BLOCKBUSTER).
 
-1. **Database Setup**
-   ```bash
-   cd database
-   # Run migrations in your Supabase SQL editor
-   ```
+📂 Project Structure
 
-2. **Backend Setup**
-   ```bash
-   cd backend
-   npm install
-   cp .env.example .env
-   # Add your Supabase credentials
-   npm run dev
-   ```
+├── client/              # Frontend Application
+│   ├── src/
+│   │   └── App.jsx      # Main Application Logic (Single File Prototype)
+│   └── package.json
+├── server/              # Backend API
+│   ├── server.js        # Express Server & API Endpoints
+│   └── package.json
+└── database/
+    └── schema.sql       # Supabase/PostgreSQL Database Schema
 
-3. **Mobile App Setup**
-   ```bash
-   cd mobile
-   npm install
-   cp .env.example .env
-   # Add backend URL
-   npm start
-   ```
 
-## Environment Variables
+🛠️ Setup Instructions
 
-### Backend (.env)
-```
-SUPABASE_URL=your_supabase_url
-SUPABASE_KEY=your_supabase_key
-JWT_SECRET=your_jwt_secret
-PORT=3000
-```
+Prerequisites
 
-### Mobile (.env)
-```
-API_URL=http://localhost:3000
-```
+Node.js (v16+)
 
-## License
+npm or yarn
 
-MIT
+A Supabase project (for the backend)
+
+1. Database Setup
+
+Go to your Supabase Dashboard.
+
+Open the SQL Editor.
+
+Copy and paste the content of database/schema.sql and run it to create the tables.
+
+2. Backend Setup
+
+cd server
+npm install express cors helmet dotenv @supabase/supabase-js bcryptjs jsonwebtoken express-validator
+# Create a .env file with SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY
+node server.js
+
+
+3. Frontend Setup
+
+cd client
+npm install react react-dom lucide-react tailwindcss
+npm start
+
+
+🛡️ API Endpoints
+
+POST /auth/login - User login
+
+GET /movies - Fetch all movies
+
+GET /theatres - Fetch theatres
+
+POST /seats/lock - Lock seats temporarily
+
+POST /booking - Confirm booking
+
+📝 License
+
+Copyright © 2025 Wharf Street Studios. All rights reserved.
