@@ -3,6 +3,12 @@ import { AuthProvider } from '../context/AuthContext';
 import { BookingProvider } from '../context/BookingContext';
 import { WalletProvider } from '../context/WalletContext';
 import { StatusBar } from 'expo-status-bar';
+import { Platform } from 'react-native';
+
+// Import global CSS for web
+if (Platform.OS === 'web') {
+  require('../global.css');
+}
 
 export default function RootLayout() {
   return (
